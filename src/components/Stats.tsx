@@ -11,7 +11,6 @@ const Stats: React.FC = () => {
       const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
       const data = await response.json();
       
-      // DexScreener returns pairs array, get the first pair's market cap
       if (data.pairs && data.pairs.length > 0) {
         const marketCap = data.pairs[0].marketCap;
         if (marketCap) {
@@ -31,23 +30,59 @@ const Stats: React.FC = () => {
     }
   };
 
-  // Function to fetch active users (holder count)
+  // Function to fetch active users (holder count) - Fixed version
   const fetchActiveUsers = async () => {
     try {
-      const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1');
-      const data = await response.json();
+      // Method 1: Try Solscan API with proper headers
+      const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1', {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
       
-      // Solscan returns total count in the response
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('Solscan response:', data); // Debug log
+      
       if (data.total) {
         const formattedUsers = data.total > 1000 
           ? `${(data.total / 1000).toFixed(1)}K` 
           : data.total.toString();
         setActiveUsers(formattedUsers);
+        return;
+      }
+      
+      // If Solscan fails, try alternative method
+      await fetchHoldersAlternative();
+      
+    } catch (error) {
+      console.error('Error fetching from Solscan:', error);
+      // Fallback to alternative method
+      await fetchHoldersAlternative();
+    }
+  };
+
+  // Alternative method using Helius API (free tier available)
+  const fetchHoldersAlternative = async () => {
+    try {
+      const response = await fetch(`https://api.helius.xyz/v0/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF?api-key=demo`);
+      const data = await response.json();
+      
+      if (data.holders) {
+        const formattedUsers = data.holders > 1000 
+          ? `${(data.holders / 1000).toFixed(1)}K` 
+          : data.holders.toString();
+        setActiveUsers(formattedUsers);
       } else {
+        // If all APIs fail, set a placeholder
         setActiveUsers('TBA');
       }
     } catch (error) {
-      console.error('Error fetching active users:', error);
+      console.error('Error fetching from alternative API:', error);
       setActiveUsers('TBA');
     }
   };
@@ -64,11 +99,10 @@ const Stats: React.FC = () => {
     };
 
     fetchData();
-
-    // Optional: Set up interval to refresh data every 30 seconds
-    const interval = setInterval(fetchData, 30000);
-
-    // Cleanup interval on component unmount
+    
+    // Set up interval to refresh data every 60 seconds (reduced frequency to avoid rate limits)
+    const interval = setInterval(fetchData, 60000);
+    
     return () => clearInterval(interval);
   }, []);
 
