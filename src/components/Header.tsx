@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center p-5 backdrop-blur-md bg-black/80 border border-green-500/30 rounded-2xl mx-5 mt-5 relative z-10 shadow-lg shadow-green-500/20">
+    <nav className="flex justify-center md:justify-between items-center p-5 backdrop-blur-md bg-black/80 border border-green-500/30 rounded-2xl mx-5 mt-5 relative z-10 shadow-lg shadow-green-500/20">
       <div className="flex items-center gap-3">
         <div className="text-3xl font-bold text-green-400 drop-shadow-lg">
           <span className="relative">
