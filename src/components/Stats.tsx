@@ -8,31 +8,44 @@ const Stats: React.FC = () => {
   // Function to fetch network value
   const fetchNetworkValue = async () => {
     try {
-      // Replace with your actual API endpoint
-      const response = await get('https://api.dexscreener.com/tokens/v1/solana/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
+      const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
       const data = await response.json();
       
-      // Format the value as needed (e.g., add $ sign, format numbers)
-      const formattedValue = `$${(data.value / 1000000).toFixed(1)}M`;
-      setNetworkValue(formattedValue);
+      // DexScreener returns pairs array, get the first pair's market cap
+      if (data.pairs && data.pairs.length > 0) {
+        const marketCap = data.pairs[0].marketCap;
+        if (marketCap) {
+          const formattedValue = marketCap > 1000000 
+            ? `$${(marketCap / 1000000).toFixed(1)}M` 
+            : `$${(marketCap / 1000).toFixed(0)}K`;
+          setNetworkValue(formattedValue);
+        } else {
+          setNetworkValue('TBA');
+        }
+      } else {
+        setNetworkValue('TBA');
+      }
     } catch (error) {
       console.error('Error fetching network value:', error);
       setNetworkValue('TBA');
     }
   };
 
-  // Function to fetch active users
+  // Function to fetch active users (holder count)
   const fetchActiveUsers = async () => {
     try {
-      // Replace with your actual API endpoint
-      const response = await get('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=10');
+      const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1');
       const data = await response.json();
       
-      // Format the number (e.g., 1500 becomes 1.5K)
-      const formattedUsers = data.count > 1000 
-        ? `${(data.count / 1000).toFixed(1)}K` 
-        : data.count.toString();
-      setActiveUsers(formattedUsers);
+      // Solscan returns total count in the response
+      if (data.total) {
+        const formattedUsers = data.total > 1000 
+          ? `${(data.total / 1000).toFixed(1)}K` 
+          : data.total.toString();
+        setActiveUsers(formattedUsers);
+      } else {
+        setActiveUsers('TBA');
+      }
     } catch (error) {
       console.error('Error fetching active users:', error);
       setActiveUsers('TBA');
