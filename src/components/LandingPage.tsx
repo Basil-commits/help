@@ -41,7 +41,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
           onClick={handleClick}
           className="group relative px-12 py-4 bg-transparent border-2 border-green-400 text-green-400 font-mono text-lg font-bold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 hover:shadow-2xl hover:shadow-green-400/50 hover:scale-105"
         >
-          <span className="relative z-10">ENTER_MATRIX.exe</span>
+          <span className="relative z-10">ENTER_ZEGE.exe</span>
           <div className="absolute inset-0 bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
         </button>
 
