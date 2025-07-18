@@ -9,7 +9,7 @@ const Stats: React.FC = () => {
   const fetchNetworkValue = async () => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('https://api.example.com/network-value');
+      const response = await fetch('https://api.dexscreener.com/tokens/v1/solana/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
       const data = await response.json();
       
       // Format the value as needed (e.g., add $ sign, format numbers)
