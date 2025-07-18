@@ -4,13 +4,13 @@ const Features: React.FC = () => {
   const features = [
     {
       icon: '⚡',
-      title: 'QUANTUM_LEAP.exe',
-      description: 'Engineered for digital supremacy, ZEGE breaks through the matrix and delivers freedom to the people.'
+      title: 'CREATE_SOLANA_WALLET',
+      description: 'Set up your Phantom Wallet or any Solana-compatible wallet to manage transactions effortlessly.'
     },
     {
       icon: '🔒',
-      title: 'MAIN_PSYOP',
-      description: 'Military-grade smart contracts and transparent algorithms committed to building World Liberty FI.'
+      title: 'GET_SOLANA',
+      description: 'Deposit SOL (Solana) from the mainnet into your wallet, which you'll later use for transactions on the Solana network.'
     },
     {
       icon: '🌐',
