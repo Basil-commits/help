@@ -58,7 +58,13 @@ const Hero: React.FC = () => {
         `}
       </style>
       <section id="home" className="text-center py-24 relative z-10">
-        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto">
+        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
+          {/* Image overlay in top-right corner */}
+          <img 
+            src="/MainPsyop.png" 
+            alt="ZEGE Logo" 
+            className="absolute -top-4 -right-4 w-24 h-24 md:w-32 md:h-32 object-contain z-[9999] pointer-events-none"
+          />
           <h1 className="text-6xl md:text-7xl font-bold mb-5">
             <span className="relative">
               <span className="text-green-400 font-mono tracking-wider">
