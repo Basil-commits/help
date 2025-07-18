@@ -34,18 +34,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
           />
         </div>
 
-        {/* Title */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 text-green-400 font-mono tracking-wider">
-          <span className="animate-pulse">Z</span>
-          <span className="text-green-300">E</span>
-          <span className="animate-pulse">G</span>
-          <span className="text-green-300">E</span>
-        </h1>
 
-        {/* Subtitle */}
-        <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono opacity-80">
-          PSYOP.EXE
-        </h2>
 
         {/* Enter Button */}
         <button
