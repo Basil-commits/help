@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           <img 
             src="/MainPsyop.png" 
             alt="ZEGE Logo" 
-            className="absolute -top-22 -right-28 w-64 h-64 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
+            className="absolute -top-28 -right-28 w-64 h-64 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
           />
           <h1 className="text-6xl md:text-7xl font-bold mb-5">
             <span className="relative">
