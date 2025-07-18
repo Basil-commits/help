@@ -73,6 +73,10 @@ const Hero: React.FC = () => {
                 <span className="text-green-400">E</span>
                 <span className="text-green-300 animate-pulse">G</span>
                 <span className="text-green-400">E</span>
+                <span className="text-green-300 animate-pulse">C</span>
+                <span className="text-green-400">O</span>
+                <span className="text-green-300 animate-pulse">I</span>
+                <span className="text-green-400">N</span>
                 {'>'}
               </span>
               <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
