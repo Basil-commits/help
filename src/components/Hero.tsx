@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
             alt="ZEGE Logo" 
             className="absolute -top-16 -right-16 w-32 h-32 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
           />
-          <h1 className="text-6xl md:text-7xl font-bold mb-5">
+          <h1 className="text-5xl md:text-7xl font-bold mb-5">
             <span className="relative">
               <span className="text-green-400 font-mono tracking-wider">
                 {'<'}
