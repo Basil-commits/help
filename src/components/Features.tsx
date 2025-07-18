@@ -5,17 +5,17 @@ const Features: React.FC = () => {
     {
       icon: '⚡',
       title: 'QUANTUM_LEAP.exe',
-      description: 'Engineered for digital supremacy, ZEGE breaks through firewalls and delivers exponential gains to network nodes.'
+      description: 'Engineered for digital supremacy, ZEGE breaks through the matrix and delivers freedom to the people.'
     },
     {
       icon: '🔒',
-      title: 'ENCRYPTION_PROTOCOL',
-      description: 'Military-grade smart contracts and transparent algorithms committed to building an unbreachable digital fortress.'
+      title: 'MAIN_PSYOP',
+      description: 'Military-grade smart contracts and transparent algorithms committed to building World Liberty FI.'
     },
     {
       icon: '🌐',
       title: 'NETWORK_COLLECTIVE',
-      description: "Every protocol decision is consensus-driven by the network. We're architecting the future of decentralized finance."
+      description: "Every protocol decision is consensus-driven by the community. We're architecting the future of decentralized finance."
     }
   ];
 
