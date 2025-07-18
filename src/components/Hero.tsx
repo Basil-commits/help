@@ -87,9 +87,9 @@ const Hero: React.FC = () => {
           
           <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
             {'>'} <a
-              href="https://www.dege.io"
+              href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
-              className="px-4 py-2 bg-transparent text-green-400 border-2 border-green-400 rounded-lg hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block font-mono"
+              className="hover:text-green-400 transition-colors cursor-pointer"
             >
               PSYOP.exe
             </a>
