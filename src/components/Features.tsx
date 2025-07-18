@@ -16,6 +16,11 @@ const Features: React.FC = () => {
       icon: '🌐',
       title: 'NETWORK_COLLECTIVE',
       description: "Every protocol decision is consensus-driven by the community. We're architecting the future of decentralized finance."
+    },
+    {
+      icon: '🇺🇸',
+      title: 'WORLD_LIBERTY_FI',
+      description: "Connected to the WLFI ecosystem."
     }
   ];
 
