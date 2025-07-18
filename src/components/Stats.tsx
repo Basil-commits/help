@@ -30,11 +30,11 @@ const Stats: React.FC = () => {
     }
   };
 
-  // Function to fetch active users (holder count) - Fixed version
+  // Function to fetch active users (holder count) - Using SolanaBeach as main API
   const fetchActiveUsers = async () => {
     try {
-      // Method 1: Try Solscan API with proper headers
-      const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1', {
+      // Method 1: Try SolanaBeach API
+      const response = await fetch('https://api.solanabeach.io/v1/token/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders', {
         headers: {
           'Accept': 'application/json',
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -46,28 +46,61 @@ const Stats: React.FC = () => {
       }
       
       const data = await response.json();
-      console.log('Solscan response:', data); // Debug log
+      console.log('SolanaBeach response:', data); // Debug log
       
-      if (data.total) {
-        const formattedUsers = data.total > 1000 
-          ? `${(data.total / 1000).toFixed(1)}K` 
-          : data.total.toString();
+      // SolanaBeach returns holder count in different formats, check for common fields
+      const holderCount = data.holderCount || data.totalHolders || data.total || data.count || data.holders?.length;
+      
+      if (holderCount) {
+        const formattedUsers = holderCount > 1000 
+          ? `${(holderCount / 1000).toFixed(1)}K` 
+          : holderCount.toString();
         setActiveUsers(formattedUsers);
         return;
       }
       
-      // If Solscan fails, try alternative method
+      // If SolanaBeach fails, try alternative method
       await fetchHoldersAlternative();
       
     } catch (error) {
-      console.error('Error fetching from Solscan:', error);
+      console.error('Error fetching from SolanaBeach:', error);
       // Fallback to alternative method
       await fetchHoldersAlternative();
     }
   };
 
-  // Alternative method using Helius API (free tier available)
+  // Alternative method using Solscan API as fallback
   const fetchHoldersAlternative = async () => {
+    try {
+      const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1', {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data.total) {
+          const formattedUsers = data.total > 1000 
+            ? `${(data.total / 1000).toFixed(1)}K` 
+            : data.total.toString();
+          setActiveUsers(formattedUsers);
+          return;
+        }
+      }
+      
+      // If Solscan also fails, try Helius as last resort
+      await fetchHoldersHelius();
+      
+    } catch (error) {
+      console.error('Error fetching from Solscan fallback:', error);
+      await fetchHoldersHelius();
+    }
+  };
+
+  // Last resort method using Helius API
+  const fetchHoldersHelius = async () => {
     try {
       const response = await fetch(`https://api.helius.xyz/v0/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF?api-key=demo`);
       const data = await response.json();
@@ -82,7 +115,7 @@ const Stats: React.FC = () => {
         setActiveUsers('TBA');
       }
     } catch (error) {
-      console.error('Error fetching from alternative API:', error);
+      console.error('Error fetching from Helius API:', error);
       setActiveUsers('TBA');
     }
   };
