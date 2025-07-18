@@ -50,7 +50,7 @@ const Features: React.FC = () => {
       </style>
       
       {/* HOW TO BUY Banner */}
-      <section className="text-center py-12 relative z-10">
+      <section className="text-center py-6 relative z-10">
         <div className="bg-black/80 border border-green-500/30 rounded-2xl p-8 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-green-400 font-mono tracking-wider">
@@ -75,7 +75,7 @@ const Features: React.FC = () => {
       </section>
 
       {/* Features Grid */}
-      <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8 my-24 px-4 relative z-10">
+      <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 px-4 relative z-10">
         {features.map((feature, index) => (
           <div
             key={index}
