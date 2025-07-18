@@ -61,7 +61,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg shadow-lg shadow-green-500/20 z-50">
+        <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg shadow-lg shadow-green-500/20 z-[9999]">
           <ul className="list-none p-2">
             {['Home', 'Tokenomics', 'Roadmap', 'Community'].map((item) => (
               <li key={item}>
