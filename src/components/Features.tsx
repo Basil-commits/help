@@ -20,7 +20,7 @@ const Features: React.FC = () => {
     {
       icon: '🇺🇸',
       title: 'WORLD_LIBERTY_FI',
-      description: "Become a part of the WLFI ecosystem."
+      description: "Become a part of the WLFI ecosystem. \nMake America Great Again."
     }
   ];
 
