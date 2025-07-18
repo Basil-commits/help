@@ -82,11 +82,11 @@ const Hero: React.FC = () => {
             </h1>
           </div>
           <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
-            {'>'} DIGITAL_REVOLUTION.EXE
+            {'>'} PSYOP.EXE
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-green-200 px-4 font-mono">
-            [INITIALIZING...] Join ZEGE, the cyberpunk token breaking through the digital matrix. 
-            Connect to the network and hack your way to financial freedom.
+            [INITIALIZING...] Join ZEGE, the PSYOP token breaking through the digital matrix. 
+            Connect to the network and free yourself for financial freedom.
           </p>
           <div className="flex flex-col md:flex-row gap-5 justify-center items-center mt-10">
             <a
@@ -103,6 +103,11 @@ const Hero: React.FC = () => {
             >
               JOIN_NETWORK.exe
             </a>
+            <a
+              href="#"
+              onClick={handleRippleEffect}
+              className="px-8 py-4 bg-transparent text-green-400 border-2 border-green-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block"
+            >
           </div>
         </div>
       </section>
