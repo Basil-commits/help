@@ -36,6 +36,7 @@ const Stats: React.FC = () => {
       const response = await fetch('https://api.solanatracker.io/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders/count', {
         headers: {
           'Accept': 'application/json',
+          'X-API-Key': '196aabda-e38a-4d07-8cb7-88a147e3432a', // Replace with your actual API key
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
       });
