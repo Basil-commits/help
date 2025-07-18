@@ -86,13 +86,13 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
-            {'>'} PSYOP.EXE
-             </a>
-            <a
-              href="https://www.x.com/zegecoin_"
+            {'>'} <a
+              href="https://www.dege.io"
               onClick={handleRippleEffect}
-              className="px-8 py-4 bg-transparent text-green-400 border-2 border-green-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block"
+              className="px-4 py-2 bg-transparent text-green-400 border-2 border-green-400 rounded-lg hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block font-mono"
             >
+              PSYOP.exe
+            </a>
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-green-200 px-4 font-mono">
             [INITIALIZING...] Join ZEGE, the PSYOP token breaking through the digital matrix. 
