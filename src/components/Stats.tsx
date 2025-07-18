@@ -2,10 +2,10 @@ import React from 'react';
 
 const Stats: React.FC = () => {
   const stats = [
-    { number: '$2.1M', label: 'NETWORK_VALUE' },
-    { number: '15K+', label: 'ACTIVE_NODES' },
+    { number: 'TBA', label: 'NETWORK_VALUE' },
+    { number: 'TBA', label: 'ACTIVE_USERS' },
     { number: '100%', label: 'DECENTRALIZED' },
-    { number: '⚡', label: 'DIGITAL_NATIVE' }
+    { number: 'WLFI', label: 'DIGITAL_NATIVE' }
   ];
 
   return (
