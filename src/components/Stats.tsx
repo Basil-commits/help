@@ -34,7 +34,7 @@ const Stats: React.FC = () => {
   const fetchHoldersSolanaTracker = async () => {
     try {
       console.log('Trying SolanaTracker API...');
-      const response = await fetch('https://api.solanatracker.io/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders/count', {
+      const response = await fetch('https://api.solanatracker.io/tokens/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/holders/count', {
         headers: {
           'Accept': 'application/json',
           'X-API-Key': 'YOUR_SOLANA_TRACKER_API_KEY', // Replace with your actual API key
