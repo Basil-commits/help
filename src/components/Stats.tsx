@@ -30,47 +30,129 @@ const Stats: React.FC = () => {
     }
   };
 
-  // Function to fetch active users (holder count) - Using SolanaBeach as main API
-  const fetchActiveUsers = async () => {
+  // Method 1: Try SolanaTracker API (has dedicated holder count endpoint)
+  const fetchHoldersSolanaTracker = async () => {
     try {
-      // Method 1: Try SolanaBeach API
-      const response = await fetch('https://api.solanabeach.io/v1/token/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders', {
+      const response = await fetch('https://api.solanatracker.io/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders/count', {
         headers: {
           'Accept': 'application/json',
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
       });
       
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('SolanaTracker response:', data);
+        
+        const holderCount = data.holderCount || data.count || data.total || data.holders;
+        if (holderCount) {
+          const formattedUsers = holderCount > 1000 
+            ? `${(holderCount / 1000).toFixed(1)}K` 
+            : holderCount.toString();
+          setActiveUsers(formattedUsers);
+          return true;
+        }
       }
-      
-      const data = await response.json();
-      console.log('SolanaBeach response:', data); // Debug log
-      
-      // SolanaBeach returns holder count in different formats, check for common fields
-      const holderCount = data.holderCount || data.totalHolders || data.total || data.count || data.holders?.length;
-      
-      if (holderCount) {
-        const formattedUsers = holderCount > 1000 
-          ? `${(holderCount / 1000).toFixed(1)}K` 
-          : holderCount.toString();
-        setActiveUsers(formattedUsers);
-        return;
-      }
-      
-      // If SolanaBeach fails, try alternative method
-      await fetchHoldersAlternative();
-      
+      return false;
     } catch (error) {
-      console.error('Error fetching from SolanaBeach:', error);
-      // Fallback to alternative method
-      await fetchHoldersAlternative();
+      console.error('Error fetching from SolanaTracker:', error);
+      return false;
     }
   };
 
-  // Alternative method using Solscan API as fallback
-  const fetchHoldersAlternative = async () => {
+  // Method 2: Try Moralis API (new Solana Token Holders API)
+  const fetchHoldersMoralis = async () => {
+    try {
+      const response = await fetch(`https://solana-gateway.moralis.io/token/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders`, {
+        headers: {
+          'Accept': 'application/json',
+          'X-API-Key': 'demo', // You'll need to get a free API key from Moralis
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Moralis response:', data);
+        
+        const holderCount = data.totalHolders || data.holderCount || data.total || data.result?.length;
+        if (holderCount) {
+          const formattedUsers = holderCount > 1000 
+            ? `${(holderCount / 1000).toFixed(1)}K` 
+            : holderCount.toString();
+          setActiveUsers(formattedUsers);
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error('Error fetching from Moralis:', error);
+      return false;
+    }
+  };
+
+  // Method 3: Try Helius API with different endpoint
+  const fetchHoldersHelius = async () => {
+    try {
+      const response = await fetch(`https://api.helius.xyz/v0/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders?api-key=demo`, {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Helius response:', data);
+        
+        const holderCount = data.totalHolders || data.holderCount || data.total || data.holders?.length;
+        if (holderCount) {
+          const formattedUsers = holderCount > 1000 
+            ? `${(holderCount / 1000).toFixed(1)}K` 
+            : holderCount.toString();
+          setActiveUsers(formattedUsers);
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error('Error fetching from Helius:', error);
+      return false;
+    }
+  };
+
+  // Method 4: Try Jupiter API (aggregator that might have holder data)
+  const fetchHoldersJupiter = async () => {
+    try {
+      const response = await fetch(`https://price.jup.ag/v4/token/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF`, {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Jupiter response:', data);
+        
+        const holderCount = data.holderCount || data.holders || data.totalHolders;
+        if (holderCount) {
+          const formattedUsers = holderCount > 1000 
+            ? `${(holderCount / 1000).toFixed(1)}K` 
+            : holderCount.toString();
+          setActiveUsers(formattedUsers);
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error('Error fetching from Jupiter:', error);
+      return false;
+    }
+  };
+
+  // Method 5: Try Solscan (your original API)
+  const fetchHoldersSolscan = async () => {
     try {
       const response = await fetch('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=1', {
         headers: {
@@ -81,41 +163,34 @@ const Stats: React.FC = () => {
       
       if (response.ok) {
         const data = await response.json();
+        console.log('Solscan response:', data);
+        
         if (data.total) {
           const formattedUsers = data.total > 1000 
             ? `${(data.total / 1000).toFixed(1)}K` 
             : data.total.toString();
           setActiveUsers(formattedUsers);
-          return;
+          return true;
         }
       }
-      
-      // If Solscan also fails, try Helius as last resort
-      await fetchHoldersHelius();
-      
+      return false;
     } catch (error) {
-      console.error('Error fetching from Solscan fallback:', error);
-      await fetchHoldersHelius();
+      console.error('Error fetching from Solscan:', error);
+      return false;
     }
   };
 
-  // Last resort method using Helius API
-  const fetchHoldersHelius = async () => {
-    try {
-      const response = await fetch(`https://api.helius.xyz/v0/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF?api-key=demo`);
-      const data = await response.json();
-      
-      if (data.holders) {
-        const formattedUsers = data.holders > 1000 
-          ? `${(data.holders / 1000).toFixed(1)}K` 
-          : data.holders.toString();
-        setActiveUsers(formattedUsers);
-      } else {
-        // If all APIs fail, set a placeholder
-        setActiveUsers('TBA');
-      }
-    } catch (error) {
-      console.error('Error fetching from Helius API:', error);
+  // Main function to fetch active users - tries multiple APIs
+  const fetchActiveUsers = async () => {
+    // Try APIs in order of reliability
+    const success = await fetchHoldersSolanaTracker() ||
+                   await fetchHoldersMoralis() ||
+                   await fetchHoldersHelius() ||
+                   await fetchHoldersJupiter() ||
+                   await fetchHoldersSolscan();
+    
+    if (!success) {
+      console.warn('All APIs failed to fetch holder count');
       setActiveUsers('TBA');
     }
   };
@@ -133,7 +208,7 @@ const Stats: React.FC = () => {
 
     fetchData();
     
-    // Set up interval to refresh data every 60 seconds (reduced frequency to avoid rate limits)
+    // Set up interval to refresh data every 60 seconds
     const interval = setInterval(fetchData, 60000);
     
     return () => clearInterval(interval);
