@@ -58,29 +58,30 @@ const Hero: React.FC = () => {
         `}
       </style>
       <section id="home" className="text-center py-24 relative z-10">
-        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-5">
-            <img 
-              src="/MainPsyop.png" 
-              alt="ZEGE Logo" 
-              className="w-16 h-16 md:w-20 md:h-20 object-contain"
-            />
-            <h1 className="text-6xl md:text-7xl font-bold">
-              <span className="relative">
-                <span className="text-green-400 font-mono tracking-wider">
-                  {'<'}
-                  <span className="text-green-300 animate-pulse">Z</span>
-                  <span className="text-green-400">E</span>
-                  <span className="text-green-300 animate-pulse">G</span>
-                  <span className="text-green-400">E</span>
-                  {'>'}
-                </span>
-                <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
-                  .exe
-                </span>
+        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto relative overflow-hidden">
+          {/* Large overlay image positioned in top-right */}
+          <img 
+            src="/MainPsyop.png" 
+            alt="ZEGE Logo" 
+            className="absolute -top-8 -right-8 w-32 h-32 md:w-40 md:h-40 object-contain opacity-70 z-10"
+          />
+          
+          <h1 className="text-6xl md:text-7xl font-bold mb-5">
+            <span className="relative">
+              <span className="text-green-400 font-mono tracking-wider">
+                {'<'}
+                <span className="text-green-300 animate-pulse">Z</span>
+                <span className="text-green-400">E</span>
+                <span className="text-green-300 animate-pulse">G</span>
+                <span className="text-green-400">E</span>
+                {'>'}
               </span>
-            </h1>
-          </div>
+              <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
+                .exe
+              </span>
+            </span>
+          </h1>
+          
           <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
             {'>'} PSYOP.EXE
           </h2>
