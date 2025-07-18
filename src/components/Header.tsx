@@ -11,22 +11,27 @@ const Header: React.FC = () => {
 
   return (
     <nav className="flex justify-between items-center p-5 backdrop-blur-md bg-black/80 border border-green-500/30 rounded-2xl mx-5 mt-5 relative z-10 shadow-lg shadow-green-500/20">
-      <div className="text-3xl font-bold text-yellow-400 drop-shadow-lg">
-      <div className="text-3xl font-bold text-green-400 drop-shadow-lg">
-        <span className="relative">
-          <span className="text-green-400 font-mono tracking-wider">
-            {'<'}
-            <span className="text-green-300 animate-pulse">Z</span>
-            <span className="text-green-400">E</span>
-            <span className="text-green-300 animate-pulse">G</span>
-            <span className="text-green-400">E</span>
-            {'>'}
+      <div className="flex items-center gap-3">
+        <img 
+          src="/MainPsyop.png" 
+          alt="ZEGE Logo" 
+          className="w-10 h-10 object-contain"
+        />
+        <div className="text-3xl font-bold text-green-400 drop-shadow-lg">
+          <span className="relative">
+            <span className="text-green-400 font-mono tracking-wider">
+              {'<'}
+              <span className="text-green-300 animate-pulse">Z</span>
+              <span className="text-green-400">E</span>
+              <span className="text-green-300 animate-pulse">G</span>
+              <span className="text-green-400">E</span>
+              {'>'}
+            </span>
+            <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
+              .exe
+            </span>
           </span>
-          <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
-            .exe
-          </span>
-        </span>
-      </div>
+        </div>
       </div>
       <ul className="hidden md:flex list-none gap-8">
         {['Home', 'About', 'Tokenomics', 'Roadmap', 'Community'].map((item) => (
