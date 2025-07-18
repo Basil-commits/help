@@ -3,9 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   const socialLinks = [
     { icon: '📱', href: '#', label: 'TELEGRAM_LINK' },
-    { icon: '🐦', href: '#', label: 'TWITTER_FEED' },
-    { icon: '💬', href: '#', label: 'DISCORD_SERVER' },
-    { icon: '📧', href: '#', label: 'EMAIL_PROTOCOL' }
+    { icon: '🐦', href: '#', label: 'x.com/zegecoin_' },
   ];
 
   return (
