@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const target = document.querySelector(href);
@@ -28,6 +29,8 @@ const Header: React.FC = () => {
           </span>
         </div>
       </div>
+      
+      {/* Desktop Navigation */}
       <ul className="hidden md:flex list-none gap-8">
         {['Home', 'Tokenomics' , 'Roadmap', 'Community'].map((item) => (
           <li key={item}>
@@ -41,6 +44,42 @@ const Header: React.FC = () => {
           </li>
         ))}
       </ul>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden absolute right-5 text-green-400 hover:text-green-300 transition-colors duration-200"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg shadow-lg shadow-green-500/20 z-50">
+          <ul className="list-none p-2">
+            {['Home', 'Tokenomics', 'Roadmap', 'Community'].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  onClick={(e) => {
+                    handleSmoothScroll(e, `#${item.toLowerCase()}`);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block px-4 py-3 text-green-300 no-underline font-medium hover:text-green-400 hover:bg-green-500/10 rounded-md transition-all duration-200"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
