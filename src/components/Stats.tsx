@@ -9,7 +9,7 @@ const Stats: React.FC = () => {
   const fetchNetworkValue = async () => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('https://api.dexscreener.com/tokens/v1/solana/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
+      const response = await get('https://api.dexscreener.com/tokens/v1/solana/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF');
       const data = await response.json();
       
       // Format the value as needed (e.g., add $ sign, format numbers)
@@ -25,7 +25,7 @@ const Stats: React.FC = () => {
   const fetchActiveUsers = async () => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('https://api.example.com/active-users');
+      const response = await get('https://public-api.solscan.io/token/holders?tokenAddress=CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF&offset=0&limit=10');
       const data = await response.json();
       
       // Format the number (e.g., 1500 becomes 1.5K)
