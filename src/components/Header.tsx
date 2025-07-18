@@ -2,7 +2,20 @@ import React, { useState } from 'react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+
+  const menuItems = [
+    { name: 'Home', href: '#home', isExternal: false },
+    { name: 'Tokenomics', href: '#tokenomics', isExternal: false },
+    { name: 'Roadmap', href: '#roadmap', isExternal: false },
+    { name: 'Community', href: 'https://www.x.com/zegecoin_', isExternal: true }
+  ];
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal: boolean) => {
+    if (isExternal) {
+      // Let the default behavior handle external links
+      return;
+    }
+    
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
@@ -32,14 +45,15 @@ const Header: React.FC = () => {
       
       {/* Desktop Navigation */}
       <ul className="hidden md:flex list-none gap-8">
-        {['Home', 'Tokenomics' , 'Roadmap', 'Community'].map((item) => (
-          <li key={item}>
+        {menuItems.map((item) => (
+          <li key={item.name}>
             <a
-              href={`#${item.toLowerCase()}`}
-              onClick={(e) => handleSmoothScroll(e, `#${item.toLowerCase()}`)}
+              href={item.href}
+              onClick={(e) => handleSmoothScroll(e, item.href, item.isExternal)}
               className="text-green-300 no-underline font-medium hover:text-green-400 transition-all duration-300 hover:text-shadow-lg hover:text-shadow-green-400/50"
+              {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
             >
-              {item}
+              {item.name}
             </a>
           </li>
         ))}
@@ -63,17 +77,18 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg shadow-lg shadow-green-500/20 z-[10001]">
           <ul className="list-none p-2">
-            {['Home', 'Tokenomics', 'Roadmap', 'Community'].map((item) => (
-              <li key={item}>
+            {menuItems.map((item) => (
+              <li key={item.name}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={item.href}
                   onClick={(e) => {
-                    handleSmoothScroll(e, `#${item.toLowerCase()}`);
+                    handleSmoothScroll(e, item.href, item.isExternal);
                     setIsMenuOpen(false);
                   }}
                   className="block px-4 py-3 text-green-300 no-underline font-medium hover:text-green-400 hover:bg-green-500/10 rounded-md transition-all duration-200"
+                  {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
                 >
-                  {item}
+                  {item.name}
                 </a>
               </li>
             ))}
