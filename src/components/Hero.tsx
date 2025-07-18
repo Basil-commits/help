@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
               EXECUTE_BUY.exe
             </a>
             <a
-              href="#"
+              href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
               className="px-8 py-4 bg-transparent text-green-400 border-2 border-green-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block"
             >
