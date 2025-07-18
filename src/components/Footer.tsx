@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: '📱', href: '#', label: 'TELEGRAM_LINK' },
-    { icon: '🐦', href: '#', label: 'x.com/zegecoin_' },
+    { icon: '💊', href: '#', label: 'PUMP_LINK' },
+    { icon: '🐦', href: 'https://www.x.com/zegecoin_', label: 'X_LINK' },
   ];
 
   return (
