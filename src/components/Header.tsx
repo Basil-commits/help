@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <ul className="hidden md:flex list-none gap-8">
-        {['Home', 'About', 'Tokenomics', 'Roadmap', 'Community'].map((item) => (
+        {['Home', , 'Roadmap', 'Community'].map((item) => (
           <li key={item}>
             <a
               href={`#${item.toLowerCase()}`}
