@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
-            > DIGITAL_REVOLUTION.EXE
+            {'>'} DIGITAL_REVOLUTION.EXE
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-green-200 px-4 font-mono">
             [INITIALIZING...] Join ZEGE, the cyberpunk token breaking through the digital matrix. 
