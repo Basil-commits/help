@@ -15,7 +15,7 @@ const Features: React.FC = () => {
     {
       icon: '💰',
       title: 'SWAP_TO_ZEGE',
-      description: "To swap SOL for ZEGE using Phantom, open your wallet, go to the Swap tab, select SOL in the "From" field, paste the ZEGE token address in the "To" field, enter the amount of SOL you want to swap, review the details, and press Swap."
+      description: "To swap SOL for ZEGE using Phantom, open your wallet, go to the Swap tab, select SOL in the \"From\" field, paste the ZEGE token address in the \"To\" field, enter the amount of SOL you want to swap, review the details, and press Swap."
     },
     {
       icon: '🇺🇸',
@@ -25,7 +25,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <>
+    <div>
       <style>
         {`
           @keyframes gradient {
@@ -54,7 +54,7 @@ const Features: React.FC = () => {
         <div className="bg-black/80 border border-green-500/30 rounded-2xl p-8 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-green-400 font-mono tracking-wider">
-              {'<'}
+              &lt;
               <span className="text-green-300 animate-pulse">H</span>
               <span className="text-green-400">O</span>
               <span className="text-green-300 animate-pulse">W</span>
@@ -65,11 +65,11 @@ const Features: React.FC = () => {
               <span className="text-green-300 animate-pulse">B</span>
               <span className="text-green-400">U</span>
               <span className="text-green-300 animate-pulse">Y</span>
-              {'>'}
+              &gt;
             </span>
           </h2>
           <p className="text-green-300 font-mono text-lg">
-            {'>'} EXECUTE_PURCHASE_PROTOCOL.exe
+            &gt; EXECUTE_PURCHASE_PROTOCOL.exe
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ const Features: React.FC = () => {
           </div>
         ))}
       </section>
-    </>
+    </div>
   );
 };
 
