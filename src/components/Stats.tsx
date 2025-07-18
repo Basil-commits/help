@@ -33,26 +33,37 @@ const Stats: React.FC = () => {
   // Method 1: Try SolanaTracker API (has dedicated holder count endpoint)
   const fetchHoldersSolanaTracker = async () => {
     try {
+      console.log('Trying SolanaTracker API...');
       const response = await fetch('https://api.solanatracker.io/tokens/CPG7gjcjcdZGHE5EJ6LoAL4xqZtNFeWEXXmtkYjAoVaF/holders/count', {
         headers: {
           'Accept': 'application/json',
-          'X-API-Key': '196aabda-e38a-4d07-8cb7-88a147e3432a', // Replace with your actual API key
+          'X-API-Key': 'YOUR_SOLANA_TRACKER_API_KEY', // Replace with your actual API key
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
       });
       
+      console.log('SolanaTracker response status:', response.status);
+      console.log('SolanaTracker response headers:', response.headers);
+      
       if (response.ok) {
         const data = await response.json();
-        console.log('SolanaTracker response:', data);
+        console.log('SolanaTracker response data:', data);
         
         const holderCount = data.holderCount || data.count || data.total || data.holders;
+        console.log('Extracted holder count:', holderCount);
+        
         if (holderCount) {
           const formattedUsers = holderCount > 1000 
             ? `${(holderCount / 1000).toFixed(1)}K` 
             : holderCount.toString();
+          console.log('Formatted users:', formattedUsers);
           setActiveUsers(formattedUsers);
           return true;
         }
+      } else {
+        console.error('SolanaTracker API failed with status:', response.status);
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
       }
       return false;
     } catch (error) {
@@ -183,6 +194,8 @@ const Stats: React.FC = () => {
 
   // Main function to fetch active users - tries multiple APIs
   const fetchActiveUsers = async () => {
+    console.log('Starting to fetch active users...');
+    
     // Try APIs in order of reliability
     const success = await fetchHoldersSolanaTracker() ||
                    await fetchHoldersMoralis() ||
@@ -193,6 +206,8 @@ const Stats: React.FC = () => {
     if (!success) {
       console.warn('All APIs failed to fetch holder count');
       setActiveUsers('TBA');
+    } else {
+      console.log('Successfully fetched holder count from one of the APIs');
     }
   };
 
