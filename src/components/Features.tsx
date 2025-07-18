@@ -3,24 +3,24 @@ import React from 'react';
 const Features: React.FC = () => {
   const features = [
     {
-      icon: '⚡',
+      icon: '💳',
       title: 'CREATE_SOLANA_WALLET',
-      description: 'Set up your Phantom Wallet or any Solana-compatible wallet to manage transactions effortlessly.'
+      description: "Set up your Phantom Wallet or any Solana-compatible wallet to manage transactions effortlessly."
     },
     {
-      icon: '🔒',
+      icon: '🏪',
       title: 'GET_SOLANA',
-      description: 'Deposit SOL (Solana) from the mainnet into your wallet, which you'll later use for transactions on the Solana network.'
+      description: "Deposit SOL (Solana) from the mainnet into your wallet, which you will later use for transactions of the Solana network"
     },
     {
-      icon: '🌐',
-      title: 'NETWORK_COLLECTIVE',
-      description: "Every protocol decision is consensus-driven by the community. We're architecting the future of decentralized finance."
+      icon: '💰',
+      title: 'SWAP_TO_ZEGE',
+      description: "To swap SOL for ZEGE using Phantom, open your wallet, go to the Swap tab, select SOL in the “From” field, paste the ZEGE token address in the “To” field, enter the amount of SOL you want to swap, review the details, and press Swap."
     },
     {
       icon: '🇺🇸',
       title: 'WORLD_LIBERTY_FI',
-      description: "Connected to the WLFI ecosystem."
+      description: "Become a part of the WLFI ecosystem."
     }
   ];
 
