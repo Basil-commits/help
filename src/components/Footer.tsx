@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
         <p className="text-green-300 font-mono text-sm">
-          &copy; 2024 ZEGE - DIGITAL_REVOLUTION.exe | SYSTEM_STATUS: ONLINE
+          &copy; 2024 ZEGE - PSYOP.exe | SYSTEM_STATUS: ONLINE
         </p>
       </div>
     </footer>
