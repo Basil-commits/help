@@ -3,6 +3,7 @@ import LandingPage from './components/LandingPage';
 import MatrixBackground from './components/MatrixBackground';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
 import Features from './components/Features';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
@@ -27,6 +28,7 @@ function App() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <Header />
         <Hero />
+        <About />
         <Features />
         <Stats />
       </div>
