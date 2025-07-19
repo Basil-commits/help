@@ -27,7 +27,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         {/* Logo/Image */}
         <div className="mb-8">
           <img 
-            src="/MainPsyop.png" 
+            src="/SaluteHat.png" 
             alt="ZEGE PSYOP" 
             className="w-64 h-64 md:w-80 md:h-80 mx-auto object-contain animate-pulse cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={handleClick}
