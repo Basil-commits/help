@@ -2,21 +2,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black py-20 px-5 relative overflow-hidden">
-      {/* Background Matrix Effect */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-20 right-10 w-32 h-32 bg-green-500/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 left-10 w-48 h-48 bg-green-400/15 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-green-300/10 rounded-full blur-lg animate-pulse"></div>
-        
-        {/* Matrix Rain Effect */}
-        <div className="absolute top-0 left-0 text-green-500/20 font-mono text-xs leading-none animate-pulse">
-          01001010<br/>11010110<br/>00110101<br/>10101011<br/>01110010
-        </div>
-        <div className="absolute top-20 right-20 text-green-500/20 font-mono text-xs leading-none animate-pulse">
-          ZEGE<br/>PSYOP<br/>MATRIX<br/>EXEC<br/>INIT
-        </div>
-      </div>
+    <section id="about" className="py-20 px-5 relative">
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Title */}
