@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
         <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
           {/* Image overlay in top-right corner - smaller on mobile */}
           <img 
-            src="/MainPsyop.png" 
+            src="/SaluteHat.png" 
             alt="ZEGE Logo" 
             className="absolute -top-16 -right-16 w-32 h-32 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
           />
