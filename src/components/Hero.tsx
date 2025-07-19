@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
           </h2>
           <p className="text-sm md:text-lg max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed text-yellow-200 px-2 md:px-4 font-mono">
             [INITIALIZING...] Join ZEGE, the PSYOP token breaking through the digital matrix. 
-            Connect to the network and free yourself for financial freedom.
+            Connect to the network and prepare yourself for financial freedom.
           </p>
           <div className="flex flex-col md:flex-row gap-3 md:gap-5 justify-center items-center mt-6 md:mt-10">
             <a
