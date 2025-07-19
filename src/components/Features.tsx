@@ -25,7 +25,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div id="features">
       <style>
         {`
           @keyframes gradient {
@@ -75,7 +75,7 @@ const Features: React.FC = () => {
       </section>
 
       {/* Features Grid */}
-      <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6 md:my-12 px-4 relative z-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6 md:my-12 px-4 relative z-10">
         {features.map((feature, index) => (
           <div
             key={index}
