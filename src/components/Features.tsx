@@ -5,12 +5,12 @@ const Features: React.FC = () => {
     {
       icon: '💳',
       title: 'CREATE_SOLANA_WALLET',
-      description: "Set up your Phantom Wallet or any Solana-compatible wallet to manage transactions effortlessly."
+      description: "Set up your Phantom Wallet or any Solana compatible wallet to manage transactions effortlessly."
     },
     {
       icon: '🏪',
       title: 'GET_SOLANA',
-      description: "Deposit SOL (Solana) from the mainnet into your wallet, which you will later use for transactions of the Solana network"
+      description: "Deposit SOL (Solana) from the mainnet into your wallet, or purchase through Phantom. You will later use this for transactions on the Solana network."
     },
     {
       icon: '💰',
