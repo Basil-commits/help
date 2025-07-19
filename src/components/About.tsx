@@ -7,8 +7,8 @@ const About: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-green-400 font-mono transform -rotate-2 inline-block">
-            <span className="bg-black border-2 border-green-500 px-6 py-3 rounded-2xl shadow-lg shadow-green-500/20">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-green-400 font-mono transform -rotate-2 inline-block">
+            <span className="bg-black border-2 border-green-500 px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl shadow-lg shadow-green-500/20">
               {'>'} ABOUT_PSYOP.exe
             </span>
           </h2>
