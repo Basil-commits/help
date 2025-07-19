@@ -56,7 +56,7 @@ const Features: React.FC = () => {
           <img 
             src="/Babe.png" 
             alt="Babe" 
-            className="absolute -top-4 -right-4 w-16 h-16 md:-top-8 md:-right-8 md:w-32 md:h-32 object-contain z-[9999] pointer-events-none"
+            className="absolute -top-4 -right-4 w-20 h-20 md:-top-8 md:-right-8 md:w-40 md:h-40 object-contain z-[9999] pointer-events-none"
           />
           <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">
             <span className="text-yellow-400 font-mono tracking-wider">
