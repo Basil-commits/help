@@ -57,15 +57,15 @@ const Hero: React.FC = () => {
           }
         `}
       </style>
-      <section id="home" className="text-center py-24 relative z-10">
-        <div className="bg-black/80 border border-yellow-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
+      <section id="home" className="text-center py-12 md:py-24 relative z-10 px-4">
+        <div className="bg-black/80 border border-yellow-500/30 rounded-xl md:rounded-2xl p-6 md:p-10 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
           {/* Image overlay in top-right corner - smaller on mobile */}
           <img 
             src="/SaluteHat.png" 
             alt="ZEGE Logo" 
-            className="absolute -top-16 -right-16 w-32 h-32 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
+            className="absolute -top-8 -right-8 w-20 h-20 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
           />
-          <h1 className="text-5xl md:text-7xl font-bold mb-5">
+          <h1 className="text-3xl md:text-7xl font-bold mb-3 md:mb-5">
             <span className="relative">
               <span className="text-yellow-400 font-mono tracking-wider">
                 {'<'}
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl mb-8 text-yellow-300 font-mono">
+          <h2 className="text-lg md:text-3xl mb-4 md:mb-8 text-yellow-300 font-mono">
             {'>'} <a
               href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
@@ -94,22 +94,22 @@ const Hero: React.FC = () => {
               PSYOP.exe
             </a>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-yellow-200 px-4 font-mono">
+          <p className="text-sm md:text-lg max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed text-yellow-200 px-2 md:px-4 font-mono">
             [INITIALIZING...] Join ZEGE, the PSYOP token breaking through the digital matrix. 
             Connect to the network and free yourself for financial freedom.
           </p>
-          <div className="flex flex-col md:flex-row gap-5 justify-center items-center mt-10">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-5 justify-center items-center mt-6 md:mt-10">
             <a
               href="https://www.pump.fun"
               onClick={handleRippleEffect}
-              className="px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-400 text-black rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 inline-block border border-yellow-400"
+              className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-600 to-yellow-400 text-black rounded-lg text-base md:text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-400/50 transition-all duration-300 inline-block border border-yellow-400"
             >
               EXECUTE_BUY.exe
             </a>
             <a
               href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
-              className="px-8 py-4 bg-transparent text-yellow-400 border-2 border-yellow-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 inline-block"
+              className="px-6 py-3 md:px-8 md:py-4 bg-transparent text-yellow-400 border-2 border-yellow-400 rounded-lg text-base md:text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 inline-block"
             >
               JOIN_NETWORK.exe
             </a>

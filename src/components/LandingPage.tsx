@@ -25,11 +25,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
       {/* Main Content */}
       <div className="relative z-10 text-center">
         {/* Logo/Image */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <img 
             src="/SaluteHat.png" 
             alt="ZEGE PSYOP" 
-            className="w-64 h-64 md:w-80 md:h-80 mx-auto object-contain animate-pulse cursor-pointer hover:scale-105 transition-transform duration-300"
+            className="w-48 h-48 md:w-80 md:h-80 mx-auto object-contain animate-pulse cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={handleClick}
           />
         </div>
@@ -39,14 +39,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         {/* Enter Button */}
         <button
           onClick={handleClick}
-          className="group relative px-12 py-4 bg-transparent border-2 border-yellow-400 text-yellow-400 font-mono text-lg font-bold rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
+          className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border-2 border-yellow-400 text-yellow-400 font-mono text-base md:text-lg font-bold rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/50 hover:scale-105"
         >
           <span className="relative z-10">ENTER_ZEGE.exe</span>
           <div className="absolute inset-0 bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
         </button>
 
         {/* Loading text */}
-        <p className="mt-8 text-yellow-300 font-mono text-sm opacity-60 animate-pulse">
+        <p className="mt-4 md:mt-8 text-yellow-300 font-mono text-xs md:text-sm opacity-60 animate-pulse">
           [INITIALIZING PSYOP PROTOCOL...]
         </p>
       </div>
