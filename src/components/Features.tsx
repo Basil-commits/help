@@ -51,7 +51,13 @@ const Features: React.FC = () => {
       
       {/* HOW TO BUY Banner */}
       <section className="text-center py-4 md:py-6 relative z-10 px-4">
-        <div className="bg-black/80 border border-yellow-500/30 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-2xl mx-auto">
+        <div className="bg-black/80 border border-yellow-500/30 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-2xl mx-auto relative">
+          {/* Babe.png image positioned to the right */}
+          <img 
+            src="/Babe.png" 
+            alt="Babe" 
+            className="absolute -top-4 -right-4 w-16 h-16 md:-top-8 md:-right-8 md:w-32 md:h-32 object-contain z-[9999] pointer-events-none"
+          />
           <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">
             <span className="text-yellow-400 font-mono tracking-wider">
               &lt;
