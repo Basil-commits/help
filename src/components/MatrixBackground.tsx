@@ -47,7 +47,7 @@ const MatrixBackground: React.FC = () => {
         const char = chars[Math.floor(Math.random() * chars.length)];
         
         // Draw character
-        ctx.fillStyle = i % 3 === 0 ? '#00ff41' : '#008f11'; // Vary brightness
+        ctx.fillStyle = i % 3 === 0 ? '#ffff00' : '#ff8f00'; // Vary brightness
         ctx.fillText(char, i * fontSize, drops[i]);
 
         // Reset drop to top randomly

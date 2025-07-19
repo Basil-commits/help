@@ -35,12 +35,12 @@ const Features: React.FC = () => {
           }
           
           @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41; }
-            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
+            0%, 100% { text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00; }
+            50% { text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; }
           }
           
           .gradient-text {
-            background: linear-gradient(45deg, #00ff41, #00cc33, #008f11);
+            background: linear-gradient(45deg, #ffff00, #ffcc00, #ff8f00);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -51,24 +51,24 @@ const Features: React.FC = () => {
       
       {/* HOW TO BUY Banner */}
       <section className="text-center py-6 relative z-10">
-        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-8 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-2xl mx-auto">
+        <div className="bg-black/80 border border-yellow-500/30 rounded-2xl p-8 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-green-400 font-mono tracking-wider">
+            <span className="text-yellow-400 font-mono tracking-wider">
               &lt;
-              <span className="text-green-300 animate-pulse">H</span>
-              <span className="text-green-400">O</span>
-              <span className="text-green-300 animate-pulse">W</span>
-              <span className="text-green-400"> </span>
-              <span className="text-green-300 animate-pulse">T</span>
-              <span className="text-green-400">O</span>
-              <span className="text-green-400"> </span>
-              <span className="text-green-300 animate-pulse">B</span>
-              <span className="text-green-400">U</span>
-              <span className="text-green-300 animate-pulse">Y</span>
+              <span className="text-yellow-300 animate-pulse">H</span>
+              <span className="text-yellow-400">O</span>
+              <span className="text-yellow-300 animate-pulse">W</span>
+              <span className="text-yellow-400"> </span>
+              <span className="text-yellow-300 animate-pulse">T</span>
+              <span className="text-yellow-400">O</span>
+              <span className="text-yellow-400"> </span>
+              <span className="text-yellow-300 animate-pulse">B</span>
+              <span className="text-yellow-400">U</span>
+              <span className="text-yellow-300 animate-pulse">Y</span>
               &gt;
             </span>
           </h2>
-          <p className="text-green-300 font-mono text-lg">
+          <p className="text-yellow-300 font-mono text-lg">
             &gt; EXECUTE_PURCHASE_PROTOCOL.exe
           </p>
         </div>
@@ -79,13 +79,13 @@ const Features: React.FC = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-black/80 border border-green-500/30 rounded-2xl p-10 text-center backdrop-blur-md hover:-translate-y-2 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300"
+            className="bg-black/80 border border-yellow-500/30 rounded-2xl p-10 text-center backdrop-blur-md hover:-translate-y-2 hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300"
           >
             <div className="text-5xl mb-5">{feature.icon}</div>
-            <h3 className="text-xl mb-4 text-green-400 font-semibold font-mono">
+            <h3 className="text-xl mb-4 text-yellow-400 font-semibold font-mono">
               {feature.title}
             </h3>
-            <p className="leading-relaxed text-green-200 font-mono text-sm">
+            <p className="leading-relaxed text-yellow-200 font-mono text-sm">
               {feature.description}
             </p>
           </div>

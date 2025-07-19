@@ -24,19 +24,19 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-center md:justify-between items-center p-5 backdrop-blur-md bg-black/80 border border-green-500/30 rounded-2xl mx-5 mt-5 relative z-[10000] shadow-lg shadow-green-500/20">
+    <nav className="flex justify-center md:justify-between items-center p-5 backdrop-blur-md bg-black/80 border border-yellow-500/30 rounded-2xl mx-5 mt-5 relative z-[10000] shadow-lg shadow-yellow-500/20">
       <div className="flex items-center gap-3">
-        <div className="text-3xl font-bold text-green-400 drop-shadow-lg">
+        <div className="text-3xl font-bold text-yellow-400 drop-shadow-lg">
           <span className="relative">
-            <span className="text-green-400 font-mono tracking-wider">
+            <span className="text-yellow-400 font-mono tracking-wider">
               {'<'}
-              <span className="text-green-300 animate-pulse">Z</span>
-              <span className="text-green-400">E</span>
-              <span className="text-green-300 animate-pulse">G</span>
-              <span className="text-green-400">E</span>
+              <span className="text-yellow-300 animate-pulse">Z</span>
+              <span className="text-yellow-400">E</span>
+              <span className="text-yellow-300 animate-pulse">G</span>
+              <span className="text-yellow-400">E</span>
               {'>'}
             </span>
-            <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
+            <span className="absolute -top-1 -right-1 text-xs text-yellow-300 opacity-70">
               .exe
             </span>
           </span>
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             <a
               href={item.href}
               onClick={(e) => handleSmoothScroll(e, item.href, item.isExternal)}
-              className="text-green-300 no-underline font-medium hover:text-green-400 transition-all duration-300 hover:text-shadow-lg hover:text-shadow-green-400/50"
+              className="text-yellow-300 no-underline font-medium hover:text-yellow-400 transition-all duration-300 hover:text-shadow-lg hover:text-shadow-yellow-400/50"
               {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
             >
               {item.name}
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden absolute right-5 text-green-400 hover:text-green-300 transition-colors duration-200"
+        className="md:hidden absolute right-5 text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           {isMenuOpen ? (
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg shadow-lg shadow-green-500/20 z-[10001]">
+        <div className="md:hidden absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-md border border-yellow-500/30 rounded-lg shadow-lg shadow-yellow-500/20 z-[10001]">
           <ul className="list-none p-2">
             {menuItems.map((item) => (
               <li key={item.name}>
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
                     handleSmoothScroll(e, item.href, item.isExternal);
                     setIsMenuOpen(false);
                   }}
-                  className="block px-4 py-3 text-green-300 no-underline font-medium hover:text-green-400 hover:bg-green-500/10 rounded-md transition-all duration-200"
+                  className="block px-4 py-3 text-yellow-300 no-underline font-medium hover:text-yellow-400 hover:bg-yellow-500/10 rounded-md transition-all duration-200"
                   {...(item.isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
                 >
                   {item.name}

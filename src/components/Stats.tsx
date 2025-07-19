@@ -163,14 +163,14 @@ const Stats: React.FC = () => {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="bg-black/80 border border-green-500/30 p-8 rounded-xl backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300"
+          className="bg-black/80 border border-yellow-500/30 p-8 rounded-xl backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300"
         >
           <span className={`text-3xl md:text-4xl font-bold block font-mono ${
-            stat.isLoading ? 'text-green-300 animate-pulse' : 'text-green-400'
+            stat.isLoading ? 'text-yellow-300 animate-pulse' : 'text-yellow-400'
           }`}>
             {stat.number}
           </span>
-          <span className="text-sm text-green-300 mt-2 block font-mono">
+          <span className="text-sm text-yellow-300 mt-2 block font-mono">
             {stat.label}
           </span>
         </div>

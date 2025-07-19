@@ -22,7 +22,7 @@ function App() {
 
   // Show main website after entering
   return (
-    <div className="min-h-screen bg-black text-green-100 overflow-x-hidden">
+    <div className="min-h-screen bg-black text-yellow-100 overflow-x-hidden">
       <MatrixBackground />
       
       <div className="relative z-10 max-w-6xl mx-auto">

@@ -44,12 +44,12 @@ const Hero: React.FC = () => {
           }
           
           @keyframes glow {
-            0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41; }
-            50% { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41; }
+            0%, 100% { text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00; }
+            50% { text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; }
           }
           
           .gradient-text {
-            background: linear-gradient(45deg, #00ff41, #00cc33, #008f11);
+            background: linear-gradient(45deg, #ffff00, #ffcc00, #ff8f00);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
         `}
       </style>
       <section id="home" className="text-center py-24 relative z-10">
-        <div className="bg-black/80 border border-green-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
+        <div className="bg-black/80 border border-yellow-500/30 rounded-2xl p-10 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
           {/* Image overlay in top-right corner - smaller on mobile */}
           <img 
             src="/SaluteHat.png" 
@@ -67,34 +67,34 @@ const Hero: React.FC = () => {
           />
           <h1 className="text-5xl md:text-7xl font-bold mb-5">
             <span className="relative">
-              <span className="text-green-400 font-mono tracking-wider">
+              <span className="text-yellow-400 font-mono tracking-wider">
                 {'<'}
-                <span className="text-green-300 animate-pulse">Z</span>
-                <span className="text-green-400">E</span>
-                <span className="text-green-300 animate-pulse">G</span>
-                <span className="text-green-400">E</span>
-                <span className="text-green-300 animate-pulse">C</span>
-                <span className="text-green-400">O</span>
-                <span className="text-green-300 animate-pulse">I</span>
-                <span className="text-green-400">N</span>
+                <span className="text-yellow-300 animate-pulse">Z</span>
+                <span className="text-yellow-400">E</span>
+                <span className="text-yellow-300 animate-pulse">G</span>
+                <span className="text-yellow-400">E</span>
+                <span className="text-yellow-300 animate-pulse">C</span>
+                <span className="text-yellow-400">O</span>
+                <span className="text-yellow-300 animate-pulse">I</span>
+                <span className="text-yellow-400">N</span>
                 {'>'}
               </span>
-              <span className="absolute -top-1 -right-1 text-xs text-green-300 opacity-70">
+              <span className="absolute -top-1 -right-1 text-xs text-yellow-300 opacity-70">
                 .exe
               </span>
             </span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl mb-8 text-green-300 font-mono">
+          <h2 className="text-2xl md:text-3xl mb-8 text-yellow-300 font-mono">
             {'>'} <a
               href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
-              className="hover:text-green-400 transition-colors cursor-pointer"
+              className="hover:text-yellow-400 transition-colors cursor-pointer"
             >
               PSYOP.exe
             </a>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-green-200 px-4 font-mono">
+          <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-yellow-200 px-4 font-mono">
             [INITIALIZING...] Join ZEGE, the PSYOP token breaking through the digital matrix. 
             Connect to the network and free yourself for financial freedom.
           </p>
@@ -102,14 +102,14 @@ const Hero: React.FC = () => {
             <a
               href="https://www.pump.fun"
               onClick={handleRippleEffect}
-              className="px-8 py-4 bg-gradient-to-r from-green-600 to-green-400 text-black rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/50 transition-all duration-300 inline-block border border-green-400"
+              className="px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-400 text-black rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 inline-block border border-yellow-400"
             >
               EXECUTE_BUY.exe
             </a>
             <a
               href="https://www.x.com/zegecoin_"
               onClick={handleRippleEffect}
-              className="px-8 py-4 bg-transparent text-green-400 border-2 border-green-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-300 inline-block"
+              className="px-8 py-4 bg-transparent text-yellow-400 border-2 border-yellow-400 rounded-lg text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 inline-block"
             >
               JOIN_NETWORK.exe
             </a>
