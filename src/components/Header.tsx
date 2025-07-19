@@ -30,10 +30,10 @@ const Header: React.FC = () => {
           <span className="relative">
             <span className="text-yellow-400 font-mono tracking-wider">
               {'<'}
-              <span className="text-yellow-300 animate-pulse">Z</span>
-              <span className="text-yellow-400">E</span>
-              <span className="text-yellow-300 animate-pulse">G</span>
-              <span className="text-yellow-400">E</span>
+              <span className="text-yellow-300 animate-pulse">W</span>
+              <span className="text-yellow-400">L</span>
+              <span className="text-yellow-300 animate-pulse">F</span>
+              <span className="text-yellow-400">I</span>
               {'>'}
             </span>
             <span className="absolute -top-1 -right-1 text-xs text-yellow-300 opacity-70">
