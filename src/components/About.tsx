@@ -57,7 +57,7 @@ const About: React.FC = () => {
                   <img 
                     src="/Statue.png" 
                     alt="Statue" 
-                    className="absolute -top-8 -right-32 w-80 h-80 md:w-96 md:h-96 object-contain z-[9999] pointer-events-none opacity-80"
+                    className="absolute -top-8 -right-40 w-80 h-80 md:w-96 md:h-96 object-contain z-[9999] pointer-events-none"
                   />
                 </div>
               </div>
