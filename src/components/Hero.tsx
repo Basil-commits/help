@@ -59,11 +59,11 @@ const Hero: React.FC = () => {
       </style>
       <section id="home" className="text-center py-12 md:py-24 relative z-10 px-4">
         <div className="bg-black/80 border border-yellow-500/30 rounded-xl md:rounded-2xl p-6 md:p-10 backdrop-blur-md hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300 max-w-4xl mx-auto relative">
-          {/* Image overlay - positioned differently on mobile vs desktop */}
+          {/* Image overlay - better mobile positioning */}
           <img 
             src="/SaluteHat.png" 
             alt="ZEGE Logo" 
-            className="absolute -top-4 -left-4 w-20 h-20 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
+            className="absolute top-2 left-2 w-20 h-20 md:-top-32 md:-right-36 md:w-80 md:h-80 object-contain z-[9999] pointer-events-none"
           />
           <h1 className="text-3xl md:text-7xl font-bold mb-3 md:mb-5">
             <span className="relative">
