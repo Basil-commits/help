@@ -44,13 +44,21 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="lg:w-1/2 flex justify-center lg:justify-start lg:pl-16">
-                <div className="w-64 h-64 bg-gradient-to-br from-green-900/50 to-black border-2 border-green-500/50 rounded-2xl shadow-xl shadow-green-500/20 p-6 flex items-center justify-center transform rotate-1 backdrop-blur-md">
-                  <div className="text-center font-mono">
-                    <div className="text-4xl text-green-400 mb-2">{'<ZEGE>'}</div>
-                    <div className="text-green-300 text-sm animate-pulse">INITIALIZING...</div>
-                    <div className="text-green-500 text-xs mt-2">PSYOP.exe</div>
-                    <div className="text-green-400 text-xs mt-1">[ACTIVE]</div>
+                <div className="relative">
+                  <div className="w-64 h-64 bg-gradient-to-br from-green-900/50 to-black border-2 border-green-500/50 rounded-2xl shadow-xl shadow-green-500/20 p-6 flex items-center justify-center transform rotate-1 backdrop-blur-md">
+                    <div className="text-center font-mono">
+                      <div className="text-4xl text-green-400 mb-2">{'<ZEGE>'}</div>
+                      <div className="text-green-300 text-sm animate-pulse">INITIALIZING...</div>
+                      <div className="text-green-500 text-xs mt-2">PSYOP.exe</div>
+                      <div className="text-green-400 text-xs mt-1">[ACTIVE]</div>
+                    </div>
                   </div>
+                  {/* Statue Image Overlay */}
+                  <img 
+                    src="/Statue.png" 
+                    alt="Statue" 
+                    className="absolute -top-8 -right-12 w-32 h-32 md:w-40 md:h-40 object-contain z-[9999] pointer-events-none opacity-80"
+                  />
                 </div>
               </div>
             </div>
