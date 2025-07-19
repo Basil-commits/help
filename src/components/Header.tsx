@@ -4,6 +4,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
+    { name: 'About', href: '#about', isExternal: false },
     { name: 'Buy', href: 'https://www.pump.fun', isExternal: true },
     { name: 'Tokenomics', href: '#tokenomics', isExternal: false },
     { name: 'Roadmap', href: '#roadmap', isExternal: false },
