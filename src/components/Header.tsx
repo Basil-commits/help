@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const menuItems = [
     { name: 'About', href: '#about', isExternal: false },
     { name: 'How to Buy', href: '#features', isExternal: false },
-    { name: 'Buy', href: 'https://pump.fun/coin/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g', isExternal: true },
+    { name: 'Buy', href: 'https://pump.fun/coin/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9', isExternal: true },
     { name: 'Community', href: 'https://www.x.com/zegecoin_', isExternal: true }
   ];
 

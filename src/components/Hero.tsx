@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-3 md:gap-5 justify-center items-center mt-6 md:mt-10">
             <a
-              href="https://pump.fun/coin/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g"
+              href="https://pump.fun/coin/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9"
               onClick={handleRippleEffect}
               className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-600 to-yellow-400 text-black rounded-lg text-base md:text-lg font-bold font-mono hover:-translate-y-1 hover:shadow-2xl hover:shadow-400/50 transition-all duration-300 inline-block border border-yellow-400"
             >

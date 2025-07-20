@@ -8,7 +8,7 @@ const Stats: React.FC = () => {
   // Function to fetch network value
   const fetchNetworkValue = async () => {
     try {
-      const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g');
+      const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9');
       const data = await response.json();
       
       if (data.pairs && data.pairs.length > 0) {
@@ -29,7 +29,7 @@ const Stats: React.FC = () => {
   const fetchActiveUsers = async () => {
     try {
       // Try SolanaTracker API first (with correct base URL and header)
-      const stResponse = await fetch('https://data.solanatracker.io/tokens/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g/holders/count', {
+      const stResponse = await fetch('https://data.solanatracker.io/tokens/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9/holders/count', {
         headers: {
           'x-api-key': '196aabda-e38a-4d07-8cb7-88a147e3432a',
           'Accept': 'application/json'
@@ -52,7 +52,7 @@ const Stats: React.FC = () => {
     }
     try {
       // Try CoinGecko API first (most reliable, no CORS issues)
-      const cgResponse = await fetch('https://api.coingecko.com/api/v3/coins/solana/contract/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g');
+      const cgResponse = await fetch('https://api.coingecko.com/api/v3/coins/solana/contract/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9');
       const cgData = await cgResponse.json();
       
       if (cgData.community_data && cgData.community_data.twitter_followers) {
@@ -69,7 +69,7 @@ const Stats: React.FC = () => {
 
     try {
       // Try Birdeye API (good for Solana tokens)
-      const birdeyeResponse = await fetch('https://public-api.birdeye.so/defi/token_overview?address=Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g');
+      const birdeyeResponse = await fetch('https://public-api.birdeye.so/defi/token_overview?address=EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9');
       const birdeyeData = await birdeyeResponse.json();
       
       if (birdeyeData.data && birdeyeData.data.holder) {
@@ -86,7 +86,7 @@ const Stats: React.FC = () => {
 
     try {
       // Try DexScreener API (might have holder data)
-      const dexResponse = await fetch('https://api.dexscreener.com/latest/dex/tokens/Bd1qPRNCQotqQo5co7L2agCB6qkM9Ui3hAx52rnLRu2g');
+      const dexResponse = await fetch('https://api.dexscreener.com/latest/dex/tokens/EyGPf7hzZ2nU5GBLEiedYB4p9C7QDZqNtf2xjSMJBhy9');
       const dexData = await dexResponse.json();
       
       if (dexData.pairs && dexData.pairs[0] && dexData.pairs[0].txns) {
